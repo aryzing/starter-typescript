@@ -1,4 +1,6 @@
-# ANCCRE
+# Starter TypeScript
+
+Starter boilerplate including TypeScript, Webpack, Babel, tslint, Prettier
 
 # TypeScript
 
