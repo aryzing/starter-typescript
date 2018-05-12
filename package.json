@@ -8,17 +8,25 @@
     "build": "",
     "type-check:src": "tsc --noEmit --project src",
     "cleanCode": "npm run lint:fix --silent ; npm run prettier:fix --silent",
-    "cleanCode:watch": "chokidar '**/src/**' '**/etc/**' -c 'npm run cleanCode --silent' -i '**/node_modules/**'",
+    "cleanCode:watch":
+      "chokidar '**/src/**' '**/etc/**' -c 'npm run cleanCode --silent' -i '**/node_modules/**'",
     "lint": "npm run lint:build --silent ; npm run lint:src --silent",
-    "lint:fix": "npm run lint:build:fix --silent ; npm run lint:src:fix --silent",
+    "lint:fix":
+      "npm run lint:build:fix --silent ; npm run lint:src:fix --silent",
     "lint:src": "tslint --config etc/tslint/tslint.json --project src",
-    "lint:src:fix": "tslint --fix --config etc/tslint/tslint.json --project src",
+    "lint:src:fix":
+      "tslint --fix --config etc/tslint/tslint.json --project src",
     "lint:build": "tslint --config etc/tslint/tslint.json --project etc/build",
-    "lint:build:fix": "tslint --fix --config etc/tslint/tslint.json --project etc/build",
-    "lint:watch": "chokidar '**/src/**' '**/etc/**' -c 'npm run lint --silent' -i '**/node_modules/**'",
-    "prettier": "prettier --config etc/prettier/.prettierrc.json --ignore-path etc/prettier/.prettierignore \"{src,etc}/**/*.{ts,tsx}\"",
-    "prettier:fix": "prettier --write --config etc/prettier/.prettierrc.json --ignore-path etc/prettier/.prettierignore \"{src,etc}/**/*.{ts,tsx}\"",
-    "prettier:fix:watch": "chokidar '**/src/**' '**/etc/**' -c 'npm run prettier:fix --silent' -i '**/node_modules/**'",
+    "lint:build:fix":
+      "tslint --fix --config etc/tslint/tslint.json --project etc/build",
+    "lint:watch":
+      "chokidar '**/src/**' '**/etc/**' -c 'npm run lint --silent' -i '**/node_modules/**'",
+    "prettier":
+      "prettier --config etc/prettier/.prettierrc.json --ignore-path etc/prettier/.prettierignore \"{src,etc}/**/*.{ts,tsx}\"",
+    "prettier:fix":
+      "prettier --write --config etc/prettier/.prettierrc.json --ignore-path etc/prettier/.prettierignore \"{src,etc}/**/*.{ts,tsx}\"",
+    "prettier:fix:watch":
+      "chokidar '**/src/**' '**/etc/**' -c 'npm run prettier:fix --silent' -i '**/node_modules/**'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -38,12 +46,12 @@
     "@babel/preset-env": "latest",
     "@babel/preset-typescript": "latest",
     "@types/google-protobuf": "latest",
-    "@types/jest": "^22.2.3",
+    "@types/jest": "latest",
     "@types/source-map-support": "latest",
     "@types/webpack": "latest",
     "babel-loader": "latest",
     "chokidar-cli": "latest",
-    "jest": "^22.4.3",
+    "jest": "latest",
     "prettier": "latest",
     "tslint": "latest",
     "tslint-config-prettier": "latest",
