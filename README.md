@@ -14,19 +14,20 @@ This repo contains three typescript projects:
 * Server: The server code that serves client code and interacts with the database. Found at `src/server`.
 * Build: The code responsible for building the Client and the Server code with Webpack using its Node API. Found at `etc/webpack`.
 
+## Module resolution
+
 Although the project uses TypeScript, it's only being used for type checking in the Client and Server projects, not for building. Webpack is being used for building. Therefore, many of the compiler options are not needed since Webpack will take care of module resolution and code transpilation via `babel-loader`.
 
-However, some of Webpack's behaviors have to be mirrored in `tsconfig.json` to ensure both tools are understanding the code in the same way:
+Module resolution configuration must be the same across all systems trying to resolve dependencies: TypeScript, Webpack, and Jest. This repo has chosen to use node's resolution strategy (commonjs) and uses several aliases. The configuration required for all systems to interpret the code in the same way is:
 
-* `"moduleResolution": "node"`
+**TypeScript**
 
-# Module resolution and aliasing
+* Set `"moduleResolution": "node"`
+* Set aliases somewhere...
 
-Must set up matching values in
+**Webpack**
 
-* webpack config
-* tsconfig
-* jest config
+**Jest**
 
 # Tests
 
@@ -60,15 +61,11 @@ If you take a look at the scripts, you'll notice the flag `--silent`. This flag 
 
 Nevertheless, if they fail, the top level call to `npm run` (the one you type into the console) will display npm's verbose error messages. Consider using --silent when invoking `npm run` yourself.
 
-## Note on tslint
+## tslint
 
-Using `tslint:all`. This catches some type errors too.
+Using `tslint:all` When using tslint's type-checking rules, we must indicate which project we want to lint. tslint uses the project's tsconfig.json to determine which files to lint.
 
-**Obs. 1.** Some errors, such as unused variables, are reported by both `tsc` and `tslint`.
-
-**Obs. 2.** Disabling tsconfig preferences also checked by tslint has no effect on tslint's reporting.
-
-## Note on prettier
+## prettier
 
 While the files to include is specified as a CLI argument, the files to exclude are specified in `.prettierignore`.
 
@@ -115,3 +112,11 @@ Note that the plugin currently does not support specifying the location and ther
 ## Note on using tslint and Prettier together
 
 Might need to save a few times for all fixes and code formatting to take place.
+
+# Ideas
+
+* Create new projects for testing to avoid issues with ignoring test files in tsconfig.json.
+  * src/client
+  * src/clientTests
+  * src/server
+  * src/serverTests
