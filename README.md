@@ -67,7 +67,7 @@ Using `tslint:all` When using tslint's type-checking rules, we must indicate whi
 
 ## prettier
 
-While the files to include is specified as a CLI argument, the files to exclude are specified in `.prettierignore`.
+While the files to include are specified using a CLI argument, the files to exclude are specified in `.prettierignore`.
 
 By default, prettier will output code to stdout. It does not report what parts of the code need to be fixed.
 
@@ -108,6 +108,15 @@ Install [Prettier - Code formatter](https://marketplace.visualstudio.com/items?i
 ```
 
 Note that the plugin currently does not support specifying the location and therefore expects it to be in the root of the directory. If that's not the case, you'll have to manually copy the properties in your .prettierrc to the plugin's.
+
+For this repo, make sure to add the following to the workspace's config to match what's in etc/prettier:
+
+```json
+{
+  "prettier.trailingComma": "all",
+  "prettier.singleQuote": true
+}
+```
 
 ## Note on using tslint and Prettier together
 
