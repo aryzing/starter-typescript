@@ -29,6 +29,24 @@ Module resolution configuration must be the same across all systems trying to re
 
 **Jest**
 
+# Building
+
+This project uses Webpack for building the code. The build files themselves are written in typescript too.
+
+However, contrary to what's suggested on Webpack's own documentation, this project does not use `ts-node` or similar tools that rely on `node-interpret`. The build tools used by `node-interpret` rely on Node's deprecated `require.extensions`.
+
+Therefore, this project opts instead to transpile the ts files first, and then run them to build the code.
+
+## Source maps
+
+To understand how source maps are set up, we must take a closer look at how the code is compiled, and how it is run
+
+### Client
+
+Although we're using TypeScript for type-checking, Babel is the tool that actually performs the transpilation using the TypeScript preset. As noted by Webpack's [documentation](https://webpack.js.org/guides/typescript/#source-maps), the tool performing the transpilation should add inline source maps. Webpack can pick up on them by setting `devtool: inline-source-maps`.
+
+### Server
+
 # Tests
 
 # Coding style and formatting
