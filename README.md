@@ -1,6 +1,6 @@
 # Starter TypeScript
 
-Starter boilerplate including TypeScript, Webpack, Babel, tslint, Prettier
+Starter boilerplate including TypeScript, Webpack, Babel, Jest, tslint, Prettier
 
 # TypeScript
 
@@ -16,9 +16,9 @@ This repo contains three typescript projects:
 
 ## Module resolution
 
-Although the project uses TypeScript, it's only being used for type checking in the Client and Server projects, not for building. Webpack is being used for building. Therefore, many of the compiler options are not needed since Webpack will take care of module resolution and code transpilation via `babel-loader`.
+Although the project uses TypeScript, it's only being used for type checking in the Client and Server projects, not for building. Webpack is being used for building. Therefore, many of the compiler options are not needed since Webpack will take care of module resolution and code transpilation via `babel-loader` configured with `@babel/preset-typescript`.
 
-Module resolution configuration must be the same across all systems trying to resolve dependencies: TypeScript, Webpack, and Jest. This repo has chosen to use node's resolution strategy (commonjs) and uses several aliases. The configuration required for all systems to interpret the code in the same way is:
+Module resolution configuration must be the same across all systems trying to resolve dependencies: TypeScript, Webpack, and Jest. This repo uses Node's resolution strategy (commonjs) and a few aliases. The configuration required for all systems to interpret the code in the same way is:
 
 **TypeScript**
 
