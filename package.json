@@ -35,8 +35,7 @@
   "dependencies": {
     "dgraph-js": "latest",
     "grpc": "latest",
-    "protobufjs": "latest",
-    "source-map-support": "latest"
+    "protobufjs": "latest"
   },
   "devDependencies": {
     "@babel/cli": "latest",
@@ -56,6 +55,7 @@
     "dotenv-webpack": "latest",
     "jest": "latest",
     "prettier": "latest",
+    "source-map-support": "latest",
     "tslint": "latest",
     "tslint-config-prettier": "latest",
     "typescript": "latest",
