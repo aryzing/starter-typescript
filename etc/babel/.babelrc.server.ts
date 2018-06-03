@@ -12,7 +12,7 @@ const babelConfig = {
     '@babel/typescript',
   ],
   plugins: [
-    '@babel/proposal-class-properties',
+    '@babel/plugin-proposal-class-properties',
     '@babel/proposal-object-rest-spread',
   ],
 };
