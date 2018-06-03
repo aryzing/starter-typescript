@@ -58,6 +58,10 @@ Although we're using TypeScript for type-checking, Babel is the tool that actual
 
 ### Server
 
+This one might be a bit tricky.
+
+Also, we're using `source-map-support` for the proper stack traces on error.
+
 # Tests
 
 # Coding style and formatting
