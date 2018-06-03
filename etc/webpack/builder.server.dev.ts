@@ -19,8 +19,8 @@ const registerServerProcessLogging = (process: ChildProcess) => {
   });
 };
 
-const spawnServer = () =>
-  spawn(
+const spawnServer = () => {
+  return spawn(
     'node',
     [
       '--inspect',
@@ -30,6 +30,7 @@ const spawnServer = () =>
       stdio: 'pipe',
     },
   );
+};
 
 webpack(config, (err, stats) => {
   if (err) {
@@ -49,5 +50,6 @@ webpack(config, (err, stats) => {
   } else {
     console.log('Server built successfully. Starting server now...');
     serverProcess = spawnServer();
+    registerServerProcessLogging(serverProcess);
   }
 });
