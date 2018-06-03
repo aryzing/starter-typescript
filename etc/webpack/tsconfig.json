@@ -1,3 +1,6 @@
 {
-  "extends": "../typescript/tsconfig.webpack.json"
+  "extends": "../typescript/tsconfig.webpack.json",
+  "compilerOptions": {
+    "outDir": "../../build/builders"
+  }
 }

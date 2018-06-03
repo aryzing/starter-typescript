@@ -17,9 +17,9 @@ For example, the presence of `src/server/tsconfig.json` indicates that `src/serv
 
 This repo contains three typescript projects:
 
-* Client: The client code to run in the browser. Found at `src/client`.
-* Server: The server code that serves client code and interacts with the database. Found at `src/server`.
-* Build: The code responsible for building the Client and the Server code with Webpack using its Node API. Found at `etc/webpack`.
+- Client: The client code to run in the browser. Found at `src/client`.
+- Server: The server code that serves client code and interacts with the database. Found at `src/server`.
+- Build: The code responsible for building the Client and the Server code with Webpack using its Node API. Found at `etc/webpack`.
 
 ## Module resolution
 
@@ -29,12 +29,33 @@ Module resolution configuration must be the same across all systems trying to re
 
 **TypeScript**
 
-* Set `"moduleResolution": "node"`
-* Set aliases somewhere...
+- Set `"moduleResolution": "node"`
+- Set aliases somewhere...
 
 **Webpack**
 
 **Jest**
+
+## Note on settings TypeScript compiler settings applied to files imported by several projects
+
+The compiler settings applied to a module that does not reside within a project's directory structure will be that of the current project being built. For example, given
+
+```
+/common
+  /helpers.ts
+/project1
+  /index1.ts # imports helpers
+  /tsconfig.json
+/project2
+  /index2.ts # also imports helpers
+  /tsconfig.json
+```
+
+module `helpers.ts` will be compiled with `/project1/tsconfig.json` settings when compiler Project 1, and with `/project2/tsconfig.json` settings when compiling Project 2.
+
+However, IDEs tend to look for the closest parent `tsconfig.json` (or apply the default settings when none is found), which might result in slight discrepancies.
+
+Currently, files in `/etc/babel` are affected by this. Will consider moving them into the `/etc/webpack` TS project to avoid these issues.
 
 # Config files
 
@@ -123,7 +144,7 @@ to receive unused errors within the editor. See Microsoft/vscode-tslint#185. Thi
 
 Following
 
-* https://github.com/Microsoft/vscode/issues/12463
+- https://github.com/Microsoft/vscode/issues/12463
 
 ## Specifying tslint config to use
 
@@ -161,10 +182,10 @@ Might need to save a few times for all fixes and code formatting to take place.
 
 Create new projects for testing to avoid issues with ignoring test files in tsconfig.json.
 
-* src/client
-* src/clientTests
-* src/server
-* src/serverTests
+- src/client
+- src/clientTests
+- src/server
+- src/serverTests
 
 Could also add a commit hook when tests are missing:
 

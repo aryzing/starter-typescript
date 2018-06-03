@@ -6,6 +6,8 @@
   "scripts": {
     "start": "",
     "build": "",
+    "dev": "",
+    "dev:builders": "tsc --project etc/webpack",
     "type-check:src": "tsc --noEmit --project src",
     "cleanCode": "npm run lint:fix --silent ; npm run prettier:fix --silent",
     "cleanCode:watch":
