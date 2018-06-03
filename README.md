@@ -36,6 +36,10 @@ Module resolution configuration must be the same across all systems trying to re
 
 **Jest**
 
+# Config files
+
+Config files used by the various tools in this repo are in `etc`.
+
 # Building
 
 This project uses Webpack for building the code. The build files themselves are written in typescript too.
@@ -149,8 +153,17 @@ Might need to save a few times for all fixes and code formatting to take place.
 
 # Ideas
 
-* Create new projects for testing to avoid issues with ignoring test files in tsconfig.json.
-  * src/client
-  * src/clientTests
-  * src/server
-  * src/serverTests
+## Tests
+
+Create new projects for testing to avoid issues with ignoring test files in tsconfig.json.
+
+* src/client
+* src/clientTests
+* src/server
+* src/serverTests
+
+Could also add a commit hook when tests are missing:
+
+> No tests found for `src/path/to/file`. An empty test file has been created. Please add tests before continuing.
+
+The test file would add a generic failing test, which would then trip up the prepush hook.
