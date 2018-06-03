@@ -24,7 +24,7 @@ const spawnServer = () =>
     'node',
     [
       '--inspect',
-      path.resolve(process.cwd(), 'build', 'server', 'server.bundle.js'),
+      path.resolve(process.cwd(), 'build', 'server', 'server.dev.bundle.js'),
     ],
     {
       stdio: 'pipe',

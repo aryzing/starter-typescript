@@ -59,6 +59,7 @@
     "@types/source-map-support": "latest",
     "@types/webpack": "latest",
     "@types/webpack-merge": "latest",
+    "@types/webpack-node-externals": "^1.6.3",
     "babel-loader": "next",
     "chokidar-cli": "latest",
     "dotenv-webpack": "latest",
@@ -69,6 +70,7 @@
     "tslint-config-prettier": "latest",
     "typescript": "latest",
     "webpack": "latest",
-    "webpack-merge": "latest"
+    "webpack-merge": "latest",
+    "webpack-node-externals": "^1.7.2"
   }
 }
