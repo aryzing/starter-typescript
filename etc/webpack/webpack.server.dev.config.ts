@@ -35,8 +35,8 @@ const config = merge(commonConfig, commonDevConfig, commonServerConfig, {
 
     // Stack traces will point to source code when source maps are available
     new webpack.BannerPlugin({
-      // Make sure this package is installed
-      banner: 'require("source-map-support").install()',
+      // Make sure this package is installed before building
+      banner: 'require("source-map-support").install();',
       // Raw: if true, banner will not be wrapped in a comment
       raw: true,
     }),
