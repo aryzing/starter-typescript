@@ -1,11 +1,8 @@
 import { performance } from 'perf_hooks';
-import sourceMapSupport from 'source-map-support';
 
 import dgraph from 'dgraph-js';
 import grpc from 'grpc';
 import name from './myModule';
-
-sourceMapSupport.install();
 
 /* Setting up the connection */
 const clientStub: dgraph.DgraphClientStub = new dgraph.DgraphClientStub(
