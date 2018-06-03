@@ -2,6 +2,13 @@
 
 Starter boilerplate including TypeScript, Webpack, Babel, Jest, tslint, Prettier
 
+Start developing now by running
+
+```sh
+npm i
+npm dev
+```
+
 # TypeScript
 
 This project uses TypeScript. All configurations are in `etc/typescript`, and then used by means of the `extends` property where they are needed.
