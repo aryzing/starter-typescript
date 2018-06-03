@@ -55,6 +55,8 @@ module `helpers.ts` will be compiled with `/project1/tsconfig.json` settings whe
 
 However, IDEs tend to look for the closest parent `tsconfig.json` (or apply the default settings when none is found), which might result in slight discrepancies.
 
+Also, not sure if babel, will use the closest parent tsconfig.json to the file being transpiled, or the closest tsconfig.json to the entry file.
+
 Currently, files in `/etc/babel` are affected by this. Will consider moving them into the `/etc/webpack` TS project to avoid these issues.
 
 # Config files
