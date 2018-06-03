@@ -6,8 +6,11 @@
   "scripts": {
     "start": "",
     "build": "",
-    "dev": "",
-    "dev:builders": "tsc --project etc/webpack",
+    "dev":
+      "chokidar 'etc' -c 'npm run dev:build:builders && npm run dev:buildandrun:server' -i '**/node_modules/**' --initial --silent",
+    "dev:build:builders": "tsc --project etc/webpack",
+    "dev:buildandrun:server":
+      "node build/builders/webpack/builder.server.dev.js",
     "type-check:src": "tsc --noEmit --project src",
     "cleanCode": "npm run lint:fix --silent ; npm run prettier:fix --silent",
     "cleanCode:watch":
@@ -30,6 +33,10 @@
     "prettier:fix:watch":
       "chokidar '**/src/**' '**/etc/**' -c 'npm run prettier:fix --silent' -i '**/node_modules/**'",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {
+    "builder_server_dev": "build/builders/webpack/builder.server.dev.js",
+    "server_dev": "build/server/server.dev.bundle.js"
   },
   "keywords": [],
   "author": "Eduard Bardají Puig <ebardaji@gmail.com>",
