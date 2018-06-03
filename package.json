@@ -45,17 +45,21 @@
     "@babel/plugin-proposal-object-rest-spread": "latest",
     "@babel/preset-env": "latest",
     "@babel/preset-typescript": "latest",
+    "@types/dotenv-webpack": "latest",
     "@types/google-protobuf": "latest",
     "@types/jest": "latest",
     "@types/source-map-support": "latest",
     "@types/webpack": "latest",
+    "@types/webpack-merge": "latest",
     "babel-loader": "latest",
     "chokidar-cli": "latest",
+    "dotenv-webpack": "latest",
     "jest": "latest",
     "prettier": "latest",
     "tslint": "latest",
     "tslint-config-prettier": "latest",
     "typescript": "latest",
-    "webpack": "latest"
+    "webpack": "latest",
+    "webpack-merge": "latest"
   }
 }
