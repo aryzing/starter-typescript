@@ -52,7 +52,7 @@
     "@types/source-map-support": "latest",
     "@types/webpack": "latest",
     "@types/webpack-merge": "latest",
-    "babel-loader": "latest",
+    "babel-loader": "next",
     "chokidar-cli": "latest",
     "dotenv-webpack": "latest",
     "jest": "latest",
