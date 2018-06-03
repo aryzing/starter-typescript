@@ -8,6 +8,7 @@ const config: Configuration = {
   entry: {
     server: path.resolve(process.cwd(), 'src', 'server', 'index.ts'),
   },
+  target: 'node',
   externals: [nodeExternals()],
   output: {
     filename: 'server.dev.bundle.js',
